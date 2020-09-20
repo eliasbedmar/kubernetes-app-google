@@ -2,10 +2,10 @@
 sudo: required
 services:
   - docker
-  - env:
-    global:
-      - GIT_SHA=$(git rev-parse HEAD)
-      - CLOUDSDK_CORE_DISABLE_PROMPTS=1
+env:
+  global:
+    - GIT_SHA=$(git rev-parse HEAD)
+    - CLOUDSDK_CORE_DISABLE_PROMPTS=1
 
 before_install:
   #Once encrypted file is added to travis for the Github repo

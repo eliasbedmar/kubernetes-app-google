@@ -11,9 +11,9 @@ docker push eliasbedmar/dockerstack-server:$GIT_SHA
 docker push eliasbedmar/dockerstack-worker:$GIT_SHA
 
 #Apply K8s config files
-kubectl apply -f kubernetes-app-google
+kubectl apply -f k8s
 
 #Imperatively set latest image for deployment
-kubectl set image deployment/deployment-client server=eliasbedmar/dockerstack-client:$GIT_SHA
-kubectl set image deployment/deployment-server server=eliasbedmar/dockerstack-server:$GIT_SHA
-kubectl set image deployment/deployment-workere server=eliasbedmar/dockerstack-worker:$GIT_SHA
+kubectl set image deployments/deployment-client client=eliasbedmar/dockerstack-client:$GIT_SHA
+kubectl set image deployments/deployment-server server=eliasbedmar/dockerstack-server:$GIT_SHA
+kubectl set image deployments/deployment-worker worker=eliasbedmar/dockerstack-worker:$GIT_SHA
